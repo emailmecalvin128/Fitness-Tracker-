@@ -1,6 +1,8 @@
 const workout = require("../models/workouts")
 
 module.exports = function (app) {
+
+    // used by api.js to get last workout 
     app.get("/api/workouts", function (req, res) {
         workout.find()
             .then(data => {
@@ -10,7 +12,7 @@ module.exports = function (app) {
                 res.json(err)
             })
     });
-
+// creates a new workout in the workout DB 
     app.post("/api/workouts", function (req, res) {
         workout.create({})
             .then(data => res.json(data))
