@@ -4,16 +4,16 @@ const path =require ('path');
 
 module.exports =function (app) {
 
-    app.get ("/", function (app) {
-        res.sendFile (path.join(_dirname, "../public/index.html"));
+    app.get ("/", function (req,res) {
+        res.sendFile (path.join(__dirname, "../public/index.html"));
     });
 // called when "continue workout" or "new workout" is clicked in html 
     app.get("/exercise", function (req,res) {
-        res.sendFile(path.join(_dirname, "../public/excercise.html"));
+        res.sendFile(path.join(__dirname, "../public/exercise.html"));
     });
 // response times for requests in http servers. 
     app.get("/stats", function (req,res) {
-        res.sendFile(path.join(_dirname, "../public/stats.html"));
+        res.sendFile(path.join(__dirname, "../public/stats.html"));
     });
 
 }
